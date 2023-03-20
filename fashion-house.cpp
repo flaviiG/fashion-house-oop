@@ -488,10 +488,12 @@ public:
             s-=s/10;
 
         for(int i=1; i<=n; i++)
-            --(*cos[i]);
+            --(*(cos[i]));
 
 
         cout<<"TOTAL: "<<s<<endl;
+
+        cos.empty();
     }
 
     void stergeArticol(Articol &a)
