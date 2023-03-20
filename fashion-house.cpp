@@ -650,8 +650,11 @@ int main()
         }
         case 6:
         {
-            for(itc=lista_customeri.begin(); itc!=lista_customeri.end(); itc++)
-                cout<<itc->second<<endl;
+            if(lista_customeri.empty())
+                cout<<"Nu exista customeri inregistrati"<<endl;
+            else
+                for(itc=lista_customeri.begin(); itc!=lista_customeri.end(); itc++)
+                    cout<<itc->second<<endl;
 
             break;
             }
@@ -671,8 +674,7 @@ int main()
             {
                 cout<<e.what()<<endl;
             }
-            for(int i=p;i<=nc;i++)
-                lista_customeri[i]=lista_customeri[i+1];
+            lista_customeri.erase(p);
             nc--;
 
             break;
